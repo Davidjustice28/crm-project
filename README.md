@@ -11,3 +11,5 @@ I need to finish the following:
 2. Update styling
 3. Add local storage
 4. Add users to visit hot list user's pages
+
+To check it out the progress so far, vist the [live](https://davidjustice28.github.io/crm-project/) link.
