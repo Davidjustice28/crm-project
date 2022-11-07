@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCrm</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div id="dashboard">
+        <nav>
+            <div id="search-bar"><input type="text" id="search-input" placeholder="Search by email, first name, or last name"><span class="material-symbols-outlined" id="search-button">search</span></div>
+            <div id="search-resultsdiv"></div>
+        </nav>
+        <section id="sidebar">
+            <h1>Contacts</h1>
+            <div id="client-list"></div>
+        </section>
+        <section id="newcontact-form">
+            <form>
+                <div>
+                    <label>First Name:</label>
+                    <input type="text" id="firstname-input">
+                    <label>Last Name:</label>
+                    <input type="text" id="lastname-input" >
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" id="email-input">
+                    <label>Number:</label>
+                    <input type="tel" id="tel-input">
+                </div>
+                <div style="width: 80%; display: flex; align-items: center; justify-content: center;">
+                    <label>Notes:</label>
+                    <textarea id="notes-input"></textarea>
+                </div>
+                <button type="button" id="newcontact-button">Add Contact</button>
+            </form>
+        </section>
+        <section id="x">
+            <h2>Reminders</h2>
+        </section>
+        <section id="y">
+            <h3>Hot List</h3>
+            <div id="hotlist-div"></div>
+        </section>
+        <div id="contact-page"></div>
+    </div>
+    <div id="contactpage">
+        <section id="contactpage-display">
+            <div id="info-box">
+                <form>
+                    <label>First Name</label>
+                    <input type="text" id="contactpage-first-input">
+                    <label>Last Name</label>
+                    <input type="text" id="contactpage-last-input">
+                    <label>Phone Number</label>
+                    <input type="tel" id="contactpage-tel-input">
+                    <label>Email Address</label>
+                    <input type="email" id="contactpage-email-input">
+                    <label>Date Created</label>
+                    <input type="text" id="contactpage-date-input">
+                    <label>Favorite</label>
+                    <input type="checkbox" id="contactpage-favorite-input">
+                    <label>Notes</label>
+                    <textarea id="contactpage-notes-input"></textarea>
+                    <button type="button" id="updatebutton">Update</button>
+                </form>
+                <button id="contactpage-backbutton"><span class="material-symbols-outlined">arrow_back</span></button>
+            </div>
+            <div id="reminder-box"></div>
+            <div id="z"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

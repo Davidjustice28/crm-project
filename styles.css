@@ -1,0 +1,208 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4E8E6;
+}
+#dashboard {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: 
+    "list nav nav "
+    "list hot hot"
+    "list x y"
+    "list x y";
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 50px 1fr 1fr 1fr;
+    grid-template-columns: 25% 1fr 1fr;
+    
+}
+
+nav {
+    grid-area: nav;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 1.5vh;
+    z-index: 2;
+}
+
+#search-bar {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+#search-bar input {
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+}
+#search-bar span {
+    position: absolute;
+    left: 95%;
+}
+
+#search-resultsdiv {
+    width: 98%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#sidebar {
+    grid-area: list;
+    background-color: red;
+    width: 95%;
+    height: 97%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#newcontact-form {
+    grid-area: hot;
+    width: 90%;
+    height: 90%;
+    background-color: brown;
+    position: relative;
+    top: 20%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#x {
+    grid-area: x;
+    width: 80%;
+    height: 60%;
+    background-color: green;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#y {
+    grid-area: y;
+    width: 80%;
+    height: 60%;
+    background-color: orange;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#client-list {
+    background-color: silver;
+    width: 90%;
+    height: 80%;
+}
+
+.contact-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+
+
+#newcontact-form form {
+    background-color:silver;
+    width:95%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#newcontact-form textarea {
+    width: 100%;
+    height: 20px;
+}
+
+#newcontact-form button {
+    width: 100px;
+    background-color: green;
+    color: white;
+}
+
+#contactpage {
+    background-color: silver;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactpage-display {
+    width: 90%;
+    height: 90%;
+    background-color: blue;
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas: 
+        "info info remind remind"
+        "info info remind remind"
+        "info info z z"
+        "info info z z"
+    ;
+}
+
+#info-box {
+    grid-area: info;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#reminder-box {
+    grid-area: remind;
+    background-color: green;
+}
+
+#z {
+    grid-area: z;
+    background-color: orange;
+}
+
+#info-box form {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    padding: 20px;
+}
