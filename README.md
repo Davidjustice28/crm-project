@@ -7,9 +7,8 @@ The web application allows users to create, review, update, and delete contacts.
 *currently working on building a todo-list like feature for adding reminders*
 
 I need to finish the following:
-1. Build reminders feature 
+1. Buils reminders completion button functionality
 2. Update styling
 3. Add local storage
-4. Add users to visit hot list user's pages
 
 To check it out the progress so far, vist the [live](https://davidjustice28.github.io/crm-project/) link.

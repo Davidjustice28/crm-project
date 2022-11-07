@@ -41,6 +41,7 @@
         </section>
         <section id="x">
             <h2>Reminders</h2>
+            <div id="reminderslist-div"></div>
         </section>
         <section id="y">
             <h3>Hot List</h3>
@@ -70,7 +71,16 @@
                 </form>
                 <button id="contactpage-backbutton"><span class="material-symbols-outlined">arrow_back</span></button>
             </div>
-            <div id="reminder-box"></div>
+            <div id="reminder-box">
+                <h4>Create A Reminder</h4>
+                <form id="reminder-form">
+                    <label>Task:</label>
+                    <input type="text" id="reminder-input" maxlength="50">
+                    <label>Due Date:</label>
+                    <input type="date" id="reminder-date-input">
+                    <button type="button" id="newreminder-button">Add Reminder</button>
+                </form>
+            </div>
             <div id="z"></div>
         </section>
     </div>

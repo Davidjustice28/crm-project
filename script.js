@@ -10,6 +10,7 @@ let notesInput = document.getElementById('notes-input')
 
 const contacts = []
 const favorites = []
+const reminders = []
 
 class Contact {
     constructor() {
@@ -21,6 +22,7 @@ class Contact {
         this.date = Date()
         this.favorite = false
         this.id = `C${contacts.length + 1}`
+        this.reminders = []
     }
 }
 
@@ -204,6 +206,7 @@ function createFavorite(contact) {
     let span = document.createElement('span')
     span.classList.add('material-symbols-outlined')
     span.innerHTML = 'emoji_people'
+    span.addEventListener('click', () => displayPage(contact))
     div.append(p,span)
     hotlistDiv.append(div)
     console.log(`${contact.firstname} was added to the Hot List`)
@@ -222,3 +225,30 @@ function removeFavorite(contact) {
         }
     })
 }
+
+//reminders creation functionality
+
+function createReminder(contact) {
+    let reminderTask = document.getElementById('reminder-input').value
+    let reminderDate = document.getElementById('reminder-date-input').value
+    let newReminder = {task: `${reminderTask} - ${contact.firstname}`, date:reminderDate, contact: contact}
+    reminders.push(newReminder)
+    contact.reminders.push(newReminder)
+    console.log(`new reminder created for ${newReminder.contact}`)
+
+    let reminderDiv = document.getElementById('reminderslist-div')
+    let div = document.createElement('div')
+    div.classList.add('reminder-div')
+    let p = document.createElement('p')
+    p.innerText = newReminder.task
+    let doneButton = document.createElement('button')
+    doneButton.innerText = 'DONE'
+    div.append(p,doneButton)
+    reminderDiv.prepend(div)
+
+    document.getElementById('reminder-input').value = null
+    document.getElementById('reminder-date-input').value = null
+}
+
+let reminderButton = document.getElementById('newreminder-button')
+reminderButton.addEventListener('click', () => createReminder(currentContact))
