@@ -7,7 +7,7 @@ The web application allows users to create, review, update, and delete contacts.
 *currently working on building a todo-list like feature for adding reminders*
 
 I need to finish the following:
-1. Buils reminders completion button functionality
+1. Build reminders completion button functionality
 2. Update styling
 3. Add local storage
 

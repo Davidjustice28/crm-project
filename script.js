@@ -63,6 +63,8 @@ function createContact() {
 
         div.append(p,span,deleteButton)
         contactListDiv.append(div) 
+        const h1 = document.querySelector('h1')
+        h1.innerText = `Contacts - ${contacts.length}`
         
     })
 }
@@ -189,6 +191,12 @@ function deleteContact(target) {
         }
     })
 
+    let h1 = document.querySelector('h1')
+    if(contacts.length == 0) {
+        h1.innerText = `Contacts`
+    }else {
+        h1.innerText = `Contacts - ${contacts.length}`
+    }
     if(favorites.includes(target)) {
         removeFavorite(target)
     }
