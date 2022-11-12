@@ -33,6 +33,7 @@ function createContact() {
         res(newContact)
     }).then((contact) => {
         contacts.push(contact)
+        notify('contact', `${contact.firstname} was added to your contacts`)
     }).then(() => {
         //reset form fields
         firstNameInput.value = null
@@ -218,6 +219,7 @@ function createFavorite(contact) {
     div.append(p,span)
     hotlistDiv.append(div)
     console.log(`${contact.firstname} was added to the Hot List`)
+    notify('contact', `${contact.firstname} was added to Hot List`)
 }
 
 function removeFavorite(contact) {
@@ -251,12 +253,52 @@ function createReminder(contact) {
     p.innerText = newReminder.task
     let doneButton = document.createElement('button')
     doneButton.innerText = 'DONE'
+    doneButton.addEventListener('click', () => completeReminder(newReminder))
     div.append(p,doneButton)
     reminderDiv.prepend(div)
 
     document.getElementById('reminder-input').value = null
     document.getElementById('reminder-date-input').value = null
+    displayPage()
+    notify('reminder', 'New reminder created')
 }
 
 let reminderButton = document.getElementById('newreminder-button')
 reminderButton.addEventListener('click', () => createReminder(currentContact))
+
+
+function completeReminder(reminder) {
+    const reminderDiv = document.getElementById('reminderslist-div')
+    const divs = reminderDiv.childNodes
+    divs.forEach((div) => {
+        let index = reminders.indexOf(reminder)
+        if(div.firstChild.innerText == reminder.task) {
+            reminderDiv.removeChild(div)
+            reminders.splice(index,1)
+            console.log(`Reminder for ${reminder.firstname} was removed`)
+        }
+    })
+}
+
+function notify(type , m) {
+    let nType = type
+    let message = m
+    let title;
+    switch(nType) {
+        case 'reminder': 
+            title = 'Reminder Alert'
+            break
+        case 'contact':
+            title = 'Contact Alert'
+            break
+        default: 
+            break
+    }
+    Notification.requestPermission((permission) => {
+        if(permission == 'granted') new Notification(title, {
+            body: message
+        })
+    })
+}
+
+

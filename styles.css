@@ -2,6 +2,7 @@ body, html {
     height: 100vh;
     margin: 0;
     width: 100vw;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 body {
@@ -60,8 +61,8 @@ nav {
     font-size: larger;
 }
 #search-bar span {
-    position: absolute;
-    left: 95%;
+    position:absolute;
+    left: 92%;
     cursor: pointer;
 }
 
@@ -131,6 +132,7 @@ nav {
 
 #client-list {
     background-color: silver;
+    border: 3px solid black;
     width: 90%;
     height: 80%;
     overflow: scroll;
@@ -145,7 +147,7 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     box-sizing: border-box;
-    border: 2px solid white;
+    border: 2px solid black
 }
 
 
@@ -157,6 +159,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    border: 3px solid black;
+    border-radius: 15px;
 }
 
 #newcontact-form textarea {
@@ -168,6 +172,8 @@ nav {
     width: 100px;
     background-color: black;
     color: white;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 #contactpage {
@@ -195,7 +201,9 @@ nav {
 
 #info-box {
     grid-area: info;
-    background-color: red;
+    background-color: black;
+    box-sizing: border-box;
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,7 +212,9 @@ nav {
 
 #reminder-box {
     grid-area: remind;
-    background-color: green;
+    background-color: orange;
+    box-sizing: border-box;
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -218,7 +228,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid red;
+    border: 3px solid black;
     position: relative;
     bottom: 10%;
     gap: 5%;
@@ -231,6 +241,8 @@ nav {
 #z {
     grid-area: z;
     background-color: orange;
+    box-sizing: border-box;
+    border: 3px solid black;
 }
 
 #info-box form {
@@ -240,6 +252,16 @@ nav {
     flex-direction: column;
     background-color: gray;
     padding: 20px;
+}
+
+#updatebutton {
+    margin-top: 10px;
+    width: 50%;
+    align-self: center;
+    background-color: orange;
+    color: black;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 #hotlist-div {
@@ -253,7 +275,7 @@ nav {
 }
 
 #hotlist-div .contact-div {
-    border: 2px solid white;
+    border: 2px solid black;
     width: 100%;
     box-sizing: border-box;
 }
@@ -266,6 +288,11 @@ nav {
     display: flex;
     flex-direction: column;
     overflow: scroll;
+}
+
+#newreminder-button {
+    background-color: black;
+    color: white;
 }
 
 #reminderslist-div::-webkit-scrollbar {
@@ -289,6 +316,9 @@ nav {
 
 .reminder-div button {
     height:50%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
 }
 
 #sidebar, #newcontact-form, #x, #y {
@@ -300,11 +330,20 @@ h1 {
     font-size: 5vh;
 }
 h2, h3 {
+
     font-size:4vh;
 }
 
 label {
     font-weight: bold;
+}
+
+input, textarea{
+    border: 3px solid black;
+}
+
+.material-symbols-outlined, button {
+    cursor:default;
 }
 
 @media(max-width: 800px) {
@@ -315,8 +354,10 @@ label {
         align-items: center;
     }
 
+
     #sidebar {
         width: 80%;
 
-    }
+    }   
+    
 }
